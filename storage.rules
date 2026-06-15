@@ -1,0 +1,33 @@
+rules_version = '2';
+
+/**
+ * Firebase Storage Security Rules for CarbonMind AI.
+ *
+ * Enforces:
+ *  - Authentication required for ALL reads and writes
+ *  - Users can only access their own files (/users/{userId}/*)
+ *  - File size limit: 5 MB per upload
+ *  - Allowed content types: JPEG, PNG, WebP, GIF images and PDF documents
+ */
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Default: deny all access
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    // User-specific storage paths
+    match /users/{userId}/{allPaths=**} {
+
+      // Only authenticated owner can read their own files
+      allow read: if request.auth != null && request.auth.uid == userId;
+
+      // Only authenticated owner can write, with size and type restrictions
+      allow write: if request.auth != null
+                   && request.auth.uid == userId
+                   && request.resource.size < 5 * 1024 * 1024  // 5 MB max
+                   && request.resource.contentType.matches('image/(jpeg|png|webp|gif)|application/pdf');
+    }
+  }
+}
