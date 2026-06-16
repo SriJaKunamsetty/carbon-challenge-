@@ -4,7 +4,7 @@
 > Challenge Vertical: Carbon Footprint Awareness Platform  
 > Helps individuals **understand**, **track**, and **reduce** their personal carbon footprint through natural-language logging, a live dashboard, an AI sustainability coach, and a Carbon Twin simulator.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/SriJaKunamsetty/carbon-challenge-/ci.yml?branch=main&label=CI&logo=github)](https://github.com/SriJaKunamsetty/carbon-challenge-/actions)
+
 [![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/SriJaKunamsetty/carbon-challenge-/actions)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![WCAG 2.2 AA](https://img.shields.io/badge/WCAG_2.2-AA-green)](docs/ACCESSIBILITY.md)
