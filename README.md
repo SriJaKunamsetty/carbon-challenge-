@@ -4,8 +4,8 @@
 > Challenge Vertical: Carbon Footprint Awareness Platform  
 > Helps individuals **understand**, **track**, and **reduce** their personal carbon footprint through natural-language logging, a live dashboard, an AI sustainability coach, and a Carbon Twin simulator.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/SriRamkunamsetty/carbonmind-ai/ci.yml?branch=main&label=CI&logo=github)](https://github.com/SriRamkunamsetty/carbonmind-ai/actions)
-[![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/SriRamkunamsetty/carbonmind-ai/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/SriJaKunamsetty/carbon-challenge-/ci.yml?branch=main&label=CI&logo=github)](https://github.com/SriJaKunamsetty/carbon-challenge-/actions)
+[![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/SriJaKunamsetty/carbon-challenge-/actions)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![WCAG 2.2 AA](https://img.shields.io/badge/WCAG_2.2-AA-green)](docs/ACCESSIBILITY.md)
 [![Tests](https://img.shields.io/badge/tests-350%2B-brightgreen)](docs/TESTING.md)
@@ -147,7 +147,7 @@ All calculations are pure, deterministic TypeScript functions with zero side eff
 ### Installation
 
 ```bash
-git clone https://github.com/SriRamkunamsetty/carbonmind-ai.git
+git clone https://github.com/SriJaKunamsetty/carbon-challenge-.git
 cd carbonmind-ai
 npm install
 ```
