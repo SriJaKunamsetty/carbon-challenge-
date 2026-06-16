@@ -1,0 +1,170 @@
+/**
+ * @fileoverview Global CSS styles for CarbonMind AI.
+ * Includes design system tokens, accessibility utilities,
+ * reduced motion support, and glassmorphism effects.
+ */
+
+@import "tailwindcss";
+
+/* ============================
+   Design System Tokens
+   ============================ */
+:root {
+  --background: #000000;
+  --foreground: #f4f4f5;
+  --primary: #10b981;
+  --primary-glow: rgba(16, 185, 129, 0.15);
+  --focus-ring: rgba(16, 185, 129, 0.5);
+  --focus-ring-offset: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* ============================
+   Base Styles
+   ============================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: #f4f4f5;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* ============================
+   Accessibility: Reduced Motion
+   Users who prefer reduced motion get
+   all animations/transitions disabled.
+   ============================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================
+   Accessibility: Focus Styles
+   Visible focus indicators for keyboard users.
+   Uses :focus-visible to avoid showing on mouse clicks.
+   ============================ */
+*:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Form-specific focus styles */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: rgba(16, 185, 129, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* ============================
+   Accessibility: Screen Reader Only
+   Utility class for visually hidden
+   content that remains accessible.
+   ============================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus,
+.sr-only:active {
+  /* Allow skip links to become visible on focus */
+}
+
+/* ============================
+   Custom Glassmorphism Scrollbar
+   ============================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================
+   Selection Glow
+   ============================ */
+::selection {
+  background: #10b981;
+  color: #000000;
+}
+
+/* ============================
+   Animations (motion-safe only)
+   ============================ */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ============================
+   High Contrast Mode Support
+   ============================ */
+@media (forced-colors: active) {
+  * {
+    border-color: ButtonText;
+  }
+
+  .glass-card {
+    border: 1px solid ButtonText;
+  }
+}
+
+/* ============================
+   Print Styles
+   ============================ */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  nav,
+  aside,
+  .no-print {
+    display: none !important;
+  }
+}
