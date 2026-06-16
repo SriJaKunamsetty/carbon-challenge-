@@ -1,7 +1,0 @@
-node_modules
-.next
-build
-coverage
-dist
-functions/lib
-*.min.js
